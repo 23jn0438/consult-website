@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>株式会社Jecコンサルティング</title>
+
+    <!-- Bootstrap 5 CDN -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/font-awesome/css/font-awesome.min.css" rel="stylesheet">
+    <style>
+        body {
+            padding-top: 20px;
+            background-color: #f8f9fa;
+        }
+        header {
+            background-color: #343a40;
+            color: white;
+            padding: 20px 0;
+        }
+        footer {
+            background-color: #343a40;
+            color: white;
+            padding: 20px 0;
+            text-align: center;
+        }
+        .section-title {
+            margin-top: 30px;
+            text-align: center;
+            color: #343a40;
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <div class="container">
+            <h1 class="display-4 text-center">株式会社Jecコンサルティング</h1>
+            <nav>
+                <ul class="nav justify-content-center">
+                    <li class="nav-item">
+                        <a class="nav-link text-white" href="#">ホーム</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link text-white" href="#">サービス</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link text-white" href="#contact-section">お問い合わせ</a>
+                    </li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main>
+        <div class="container">
+            <section id="about-section">
+                <h2 class="section-title">私たちのサービス</h2>
+                <p class="text-center">
+                    私たちのサービスは、IT コンサルティング、システム開発、企業のデジタルトランスフォーメーション（DX）推進をサポートします。私たちの専門家が貴社の成長をお手伝いします。
+                </p>
+            </section>
+
+            <section id="contact-section">
+                <h2 class="section-title">お問い合わせ</h2>
+                <p class="text-center">ご質問やご相談がある場合は、以下のフォームからお問い合わせください。</p>
+
+                <!-- Contact Form -->
+                <form action="contact.php" method="POST" class="needs-validation" novalidate>
+                    <div class="row">
+                        <div class="col-md-6 mb-3">
+                            <label for="name" class="form-label">お名前</label>
+                            <input type="text" class="form-control" id="name" name="name" required>
+                            <div class="invalid-feedback">お名前は必須です。</div>
+                        </div>
+                        <div class="col-md-6 mb-3">
+                            <label for="email" class="form-label">メールアドレス</label>
+                            <input type="email" class="form-control" id="email" name="email" required>
+                            <div class="invalid-feedback">有効なメールアドレスを入力してください。</div>
+                        </div>
+                    </div>
+                    <div class="mb-3">
+                        <label for="message" class="form-label">メッセージ</label>
+                        <textarea class="form-control" id="message" name="message" rows="5" required></textarea>
+                        <div class="invalid-feedback">メッセージは必須です。</div>
+                    </div>
+                    <button type="submit" class="btn btn-primary">送信</button>
+                </form>
+            </section>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer>
+        <p>&copy; 2025 株式会社Jecコンサルティング. All Rights Reserved.</p>
+    </footer>
+
+    <!-- Bootstrap Bundle with Popper -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+
+    <!-- Custom Validation Script -->
+    <script>
+        // Bootstrap 5 custom form validation
+        (function () {
+            'use strict'
+            var forms = document.querySelectorAll('.needs-validation')
+            Array.prototype.slice.call(forms)
+                .forEach(function (form) {
+                    form.addEventListener('submit', function (event) {
+                        if (!form.checkValidity()) {
+                            event.preventDefault()
+                            event.stopPropagation()
+                        }
+                        form.classList.add('was-validated')
+                    }, false)
+                })
+        })()
+    </script>
+</body>
+</html>
